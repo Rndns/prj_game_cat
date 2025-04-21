@@ -49,6 +49,7 @@ function calculateWinner(squares, boardSize) {
         const line = lines[i];
         let first = squares[line[0]];
         if (first && line.every(index => squares[index] === first)) {
+            window.print(line)
             return first;
         }
     }

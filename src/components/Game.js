@@ -92,6 +92,23 @@ function Game () {
       }
         
       squares[i] = xIsNext ? "X" : "O";
+
+      if (!squares[i+2]) {
+        squares[i+2] = squares[i+1];
+        squares[i+1] = "";
+      }
+      if (!squares[i-2]) {
+        squares[i-2] = squares[i-1];
+        squares[i-1] = "";
+      }
+      if (!squares[i+20]) {
+        squares[i+20] = squares[i+10];
+        squares[i+10] = "";
+      }
+      if (!squares[i-20]) {
+        squares[i-20] = squares[i-10];
+        squares[i-10] = "";
+      }
       
       setHistory(historycopy.concat([{squares: squares}]));
       setXIsnext(!xIsNext);

@@ -7,6 +7,7 @@ function Board ({ size, squares, onClick, count, myButton }) {
     return (
       <Square
         key={i}
+        num={i}
         nums={squares[i]}
         onClick={() => onClick(i)}
         counts = {count}
@@ -21,7 +22,7 @@ function Board ({ size, squares, onClick, count, myButton }) {
     let boardRow = [];
 
     for (let col = 0; col < size; col++) {
-      boardRow.push(renderSquare(row * size + col));
+      boardRow.push(renderSquare(row * 10 + col));
     }
 
     board.push(
